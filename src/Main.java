@@ -1,4 +1,6 @@
 import entity.Category;
+import entity.Customer;
+import service.UserService;
 import entity.Product;
 import service.CategoryService;
 import service.ProductService;
@@ -7,6 +9,9 @@ import service.UserService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import static service.UserService.themDuLieu;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -65,7 +70,33 @@ public class Main {
         //ProductService.displayProduct();
 
 
-        UserService.themDuLieu();
+//        UserService.
+//        UserService.themDuLieu();
 
+
+        while (true) {
+//            System.out.println("1. Thêm đối tượng Customer");
+//            System.out.println("2. Thêm đối tượng Admin");
+//            System.out.println("3. Thêm đối tượng Manager");
+//            System.out.println("4. Thêm đối tượng Seller");
+//            System.out.println("0. Thoát");
+
+            Scanner scanner = new Scanner(System.in);
+            int choice = scanner.nextInt();
+
+            if(choice == 0) {
+                break;
+            } else if (choice == 1) {
+                UserService.themDuLieu("1", "123456", "Kiệt lớn", 100000000);
+            } else if (choice == 2) {
+                UserService.themDuLieu("2", "123456", "Kiệt nhỏ");
+            } else if (choice == 3) {
+                UserService.themDuLieu("3", "123456", "Nhân",10000000.0);
+            } else if (choice == 4) {
+                UserService.themDuLieu("4","123456","Thịnh","ABC",1000);
+            } else {
+                System.out.println("Out");
+            }
+        }
     }
 }
