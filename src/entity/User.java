@@ -1,16 +1,31 @@
 package entity;
 
 public class User {
-    private int id;
-    private String name;
-    private int age;
-    private int birthday;
-    private String address;
+    protected String id;
+    protected String password;
+    protected String name;
 
-    public void DangNhap(){
+
+    public User(String id, String password, String name) {
+        this.id = id;
+        this.password = password;
+        this.name = name;
 
     }
-    public void DangKy(){
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+    public void dangNhap(String id, String password){
+return;
+    }
+    public void dangKy(){
 
     }
 }
