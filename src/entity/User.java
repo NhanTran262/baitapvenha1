@@ -1,6 +1,6 @@
 package entity;
 
-public class User {
+public abstract class User {
     protected String id;
     protected String password;
     protected String name;
@@ -22,9 +22,9 @@ public class User {
                 '}';
     }
 
-    public void dangNhap(String id, String password){
-return;
-    }
+    public abstract void dangNhap(String id, String password);
+
+
     public void dangKy(){
 
     }

@@ -18,4 +18,8 @@ public class Admin extends User{
 
     }
 
+    public void dangNhap(String id, String password) {
+        System.out.println("chuyen sang trang dashboard cho admin");
+    }
+
 }

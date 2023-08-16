@@ -1,7 +1,5 @@
-import entity.Category;
-import entity.Customer;
+import entity.*;
 import service.UserService;
-import entity.Product;
 import service.CategoryService;
 import service.ProductService;
 import service.UserService;
@@ -15,10 +13,10 @@ import static service.UserService.themDuLieu;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in);
 //        Category dt1 = new Category(1, "Thời trang nam");
 //        CategoryService.plusCategory(dt1, 0);
-////        ProductService productService = new ProductService();
+//        ProductService productService = new ProductService();
 //
 //        Category dt2 = new Category(2, "Thời trang nữ");
 //        CategoryService.plusCategory(dt2,1);
@@ -74,29 +72,60 @@ public class Main {
 //        UserService.themDuLieu();
 
 
-        while (true) {
-//            System.out.println("1. Thêm đối tượng Customer");
-//            System.out.println("2. Thêm đối tượng Admin");
-//            System.out.println("3. Thêm đối tượng Manager");
-//            System.out.println("4. Thêm đối tượng Seller");
-//            System.out.println("0. Thoát");
+//        while (true) {
+//
+//            Scanner scanner = new Scanner(System.in);
+//            int choice = scanner.nextInt();
+//
+////            if(choice > 4) {
+////                break;
+////            } else if (choice == 1) {
+////                UserService.themDuLieu(new Customer("1", "123456", "Kiệt lớn", 100000000),0);
+////            } else if (choice == 2) {
+////                UserService.themDuLieu(new Admin("2", "123456", "Kiệt nhỏ"),1);
+////            } else if (choice == 3) {
+////                UserService.themDuLieu(new Manager("3", "123456", "Nhân",10000000.0),2);
+////            } else if (choice == 4) {
+////                UserService.themDuLieu(new Seller("4","123456","Thịnh","ABC",1000),3);
+////            } else {
+////                System.out.println("Out");
+////            }
+//
+//            switch (choice) {
+//                case 1:
+//                    UserService.themDuLieu(new Customer("1", "123456", "Kiệt lớn", 100000000),0);
+//                    UserService.themDuLieu(new Customer("5","147852","Thắng",100000000),4);
+//                    break;
+//                case 2:
+//                    UserService.themDuLieu(new Admin("2", "123456", "Kiệt nhỏ"),1);
+//                    break;
+//                case 3:
+//                    UserService.themDuLieu(new Manager("3", "123456", "Nhân", 10000000.0),2);
+//                    break;
+//                case 4:
+//                    UserService.themDuLieu(new Seller("4", "123456", "Thịnh", "ABC", 1000),3);
+//                    break;
+//                default:
+//                    System.out.println("Out");
+//                    break;
+//            }
+//            UserService.themDuLieu();
+//
+//
+//            }
+        Customer customer = new Customer("1", "123", "chinhdeptrai" ,0L);
+        UserService.themDuLieu(customer, 0);
 
-            Scanner scanner = new Scanner(System.in);
-            int choice = scanner.nextInt();
+        Admin admin = new Admin("2", "123", "chinhxautrai");
+        UserService.themDuLieu(admin, 1);
 
-            if(choice == 0) {
-                break;
-            } else if (choice == 1) {
-                UserService.themDuLieu("1", "123456", "Kiệt lớn", 100000000);
-            } else if (choice == 2) {
-                UserService.themDuLieu("2", "123456", "Kiệt nhỏ");
-            } else if (choice == 3) {
-                UserService.themDuLieu("3", "123456", "Nhân",10000000.0);
-            } else if (choice == 4) {
-                UserService.themDuLieu("4","123456","Thịnh","ABC",1000);
-            } else {
-                System.out.println("Out");
-            }
+        Manager manager = new Manager("3", "123", "chinhsieugiau" ,0L);
+        UserService.themDuLieu(manager, 2);
+
+        Seller seller = new Seller("4", "123", "chinhsale" , "codegym", 5);
+        UserService.themDuLieu(seller, 3);
+
+        UserService.dangNhap(2);
+
         }
     }
-}
